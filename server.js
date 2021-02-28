@@ -2,14 +2,11 @@ const express = require('express');
 const app = express();
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-var Auth = false
+require('dotenv').config();
 
 
 
-
-var connectionString = 'mongodb+srv://salt57:sourish@cluster0.q4lz6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
-MongoClient.connect(connectionString, { useUnifiedTopology: true })
+MongoClient.connect('mongodb+srv://salt57:sourish@cluster0.q4lz6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
     const db = client.db('users')
@@ -25,10 +22,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.get('/', (req, res) => {
         res.render('login')
     })
-
-    // app.get('/corehome', (req, res) => {
-    //     res.render('corehomepage')
-    // })
 
     app.post('/signin', (req, res) => {
         // console.log(req.body)
@@ -49,12 +42,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
                                 res.render('corehomepage', taskInfo)
                             })
-                        // tasksCollection.findOne({'username': username},function(err,finditem){
-                        //     console.log(finditem)
-                        //  })
-                        // console.log(taskResult[0])
-                        // console.log(JSON.stringify(taskInfo))
-                        //  
                     }
                     else
                     {
