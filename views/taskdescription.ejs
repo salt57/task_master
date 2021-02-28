@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board HomePage</title>
+    <title>Task Description</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -12,11 +12,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="download.jpg" width="35" height="35" class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="#"><b> ISTE Task Master </b></a>
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/taskassign">Common Task Assignment<span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,17 +23,36 @@
           </form>
         </div>
       </nav>
-      <br>
-      <h2><b>Core Committe List</b></h2>
-      <br>
-      
-      <div class="list-group">
-          <% coreMembers.forEach(function(thing){ %>
-              <a href="/taskdescr" class="list-group-item list-group-item-action"><%= thing.username %><button type="button" class="btn btn-outline-dark float-right">Progress</button><button onclick="" type="button" class="btn btn-outline-dark float-right">Assign</button></a>
-            <% }) %>
-        
+    <br>
+    <h2><b>Task Description Page</b></h2>
+    <br>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Task Heading</h5>
+          <p class="card-text">Task Description.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Sub-Part
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Sub-Part
+            </label>
+          </div><br>
+          <label for="basic-url"><b>Submission</b></label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">GitHub Link</span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+                    <a href="#" class="btn btn-primary">Submit</a>
+        </div>
       </div>
-<br><br>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  

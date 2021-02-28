@@ -23,6 +23,18 @@ MongoClient.connect('mongodb+srv://salt57:sourish@cluster0.q4lz6.mongodb.net/myF
         res.render('login')
     })
 
+    app.get('/commontask', (req, res) => {
+        res.render('corecommontask')
+    })
+
+    app.get('/taskdescr', (req, res) => {
+        res.render('taskdescription')
+    })
+
+    app.get('/taskassign', (req, res) => {
+        res.render('taskassign')
+    })
+
     app.post('/signin', (req, res) => {
         // console.log(req.body)
         if(parseInt(req.body.username.slice(0,2)) == 20)
